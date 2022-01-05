@@ -262,8 +262,8 @@ class Board extends Component {
                 </div>
 
                 <div className='toolbar' >
-                    <input className='toolbutton' disabled={!(this.state.history && this.state.history.length != 0)} type="button" value="Undo" onClick={() => this.undo()} />
-                    <input className='toolbutton' disabled={!(this.state.future && this.state.future.length != 0)} type="button" value="Redo" onClick={() => this.redo()} />
+                    <input className='toolbutton' disabled={!(this.state.history && this.state.history.length !== 0)} type="button" value="Undo" onClick={() => this.undo()} />
+                    <input className='toolbutton' disabled={!(this.state.future && this.state.future.length !== 0)} type="button" value="Redo" onClick={() => this.redo()} />
                     <input className='toolbutton' type="button" value="Reset" onClick={() => this.reset()} />
                     <input className='botbutton' type="button" value={this.state.bot === EmptyCell ? "Start playing with computer" : "Stop playing with computer"} onClick={() => this.startPlayingAsComputer()} />
                 </div>
