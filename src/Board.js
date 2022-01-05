@@ -29,6 +29,11 @@ class Board extends Component {
         }
 
         this.setState({ cells: cells, player: Player1, history: [], future: [] });
+
+        if (this.state && this.state.bot === Player1) {
+            this.playAsComputer();
+        }
+
         return cells;
     }
 
@@ -102,8 +107,12 @@ class Board extends Component {
 
 
     startPlayingAsComputer() {
-        this.setState({ bot: this.state.player });
-        this.playAsComputer();
+        if (this.state.bot === EmptyCell) {
+            this.setState({ bot: this.state.player });
+            this.playAsComputer();
+        } else {
+            this.setState({ bot: EmptyCell });
+        }
     }
 
     checkWinner() {
