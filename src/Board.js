@@ -28,7 +28,7 @@ class Board extends Component {
             }
         }
 
-        this.setState({ cells: cells, player: Player1, history: [], future: [], bot: EmptyCell });
+        this.setState({ cells: cells, player: Player1, history: [], future: [] });
         return cells;
     }
 
