@@ -31,7 +31,9 @@ class Board extends Component {
         this.setState({ cells: cells, player: Player1, history: [], future: [] });
 
         if (this.state && this.state.bot === Player1) {
-            this.playAsComputer();
+            setTimeout(() => {
+                this.playAsComputer();
+            }, 400);
         }
 
         return cells;
